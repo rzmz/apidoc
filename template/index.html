@@ -248,7 +248,7 @@
                 <label class="control-label" for="sample-request-header-field-{{field}}">{{field}}</label>
                 <div class="controls">
                   <div class="input-append">>
-                    <input type="text" placeholder="{{field}}" class="input-xxlarge sample-request-header" data-sample-request-header-name="{{field}}" data-sample-request-header-group="sample-request-header-{{@../index}}">
+                    <input type="text" placeholder="{{field}}" value="{{defaultValue}}" class="input-xxlarge sample-request-header" data-sample-request-header-name="{{field}}" data-sample-request-header-group="sample-request-header-{{@../index}}">
                     <span class="add-on">{{type}}</span>
                   </div>
                 </div>
@@ -269,8 +269,8 @@
               <div class="control-group">
                 <label class="control-label" for="sample-request-param-field-{{field}}">{{field}}</label>
                 <div class="controls">
-                  <div class="input-append">>
-                    <input type="text" placeholder="{{field}}" class="input-xxlarge sample-request-param" data-sample-request-param-name="{{field}}" data-sample-request-param-group="sample-request-param-{{@../index}}">
+                  <div class="input-append">
+                    <input type="text" placeholder="{{field}}" value="{{defaultValue}}" class="input-xxlarge sample-request-param" data-sample-request-param-name="{{field}}" data-sample-request-param-group="sample-request-param-{{@../index}}">
                     <span class="add-on">{{type}}</span>
                   </div>
                 </div>
