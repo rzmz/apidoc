@@ -14,6 +14,32 @@ define([
           sendSampleRequest(group, name, version, $(this).data("sample-request-type"));
       });
 
+      $(".sample-request-reset").off("click");
+      $(".sample-request-reset").on("click", function(e) {
+          e.preventDefault();
+          var $form = $(e.currentTarget).closest("form");
+          var $inputs = $form.find("input[data-defaultValue]");
+          $.each($inputs, function(i, input) {
+              $(input).val($(input).data("defaultvalue"));
+          });
+          var $root = $(this).parents("article");
+          var group = $root.data("group");
+          var name = $root.data("name");
+          var version = $root.data("version");
+          sendSampleRequest(group, name, version, $(this).data("sample-request-type"));
+      });
+
+      $(".sample-request-sendclear").off("click");
+      $(".sample-request-sendclear").on("click", function(e) {
+          e.preventDefault();
+          var $root = $(this).parents("article");
+          var group = $root.data("group");
+          var name = $root.data("name");
+          var version = $root.data("version");
+          clearSampleRequest(group, name, version);
+          sendSampleRequest(group, name, version, $(this).data("sample-request-type"));
+      });
+
       // Button clear
       $(".sample-request-clear").off("click");
       $(".sample-request-clear").on("click", function(e) {
