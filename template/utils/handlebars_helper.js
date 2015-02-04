@@ -223,6 +223,23 @@ define([
         return ds;
     });
 
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+        }
+        return "";
+    }
+    
+    Handlebars.registerHelper('getDefaultValue', function(defaultValue) {
+        if (defaultValue && defaultValue.indexOf("from_cookie_") > -1) {
+            return getCookie(defaultValue.replace("from_cookie_", ""));
+        }
+        return defaultValue;
+    });
     /**
      *
      */
