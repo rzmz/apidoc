@@ -3,6 +3,15 @@ define([
 ], function($) {
 
   var initDynamic = function() {
+      
+      // one initial api call to init default farm and field cookies        
+      var url = top.location.href.replace("apidoc/", "");
+            
+      $.ajax({
+          url: url
+      });
+      
+      
       // Button send
       $(".sample-request-send").off("click");
       $(".sample-request-send").on("click", function(e) {
